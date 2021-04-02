@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Alticator Geometritizor
+        </title>
+        <link rel="stylesheet" href="ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="engine.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div id="internet-error" style="position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; box-sizing: border-box; padding: 100px; background-color: #505050; color: rgb(255, 117, 117); padding-left: 300px; z-index: 1;">
+            <span style="font-size: 36px;">No Internet Connection</span><br>
+            <span style="font-size: 18px">Could not load libraries and/or could not run scripts</span>
+        </div>
+        <nav class="sidenav" id="menubar">
+            <button class="header" onclick="closeMenubar()">
+                &#171; Menu
+            </button>
+            <button onclick="tab(1, this)" id="tab-1-button">
+                Volume
+            </button>
+        </nav>
+        <div class="container" id="container">
+            <nav>
+                <button class="menu-button" id="menu-button" onclick="showMenubar()" style="visibility: hidden;">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+                <span class="brand-text">
+                    Alticator Geometritizor
+                </span>
+            </nav>
+            <div id="tab-name"></div>
+            <div class="tab" id="tab-1" style="display: none;">
+                <div id="volume-cube-wrapper">
+                    <div id="volume-cube">
+                        <div id="side1"></div>
+                        <div id="side2"></div>
+                        <div id="side3"></div>
+                        <div id="side4"></div>
+                        <div id="side5"></div>
+                        <div id="side6"></div>
+                    </div>
+                    <input id="volume-x" placeholder="X">
+                    <input id="volume-y" placeholder="Y">
+                    <input id="volume-z" placeholder="Z">
+                </div>
+            </div>
+            <div id="results-container">
+                <button onclick="calculate()">Calculate</button>
+                <div class="results-box">
+                    <div class="header">
+                        Results
+                    </div>
+                    <div class="body" id="results">
+                        Click <code>Calculate</code> to see results
+                    </div>
+                    <div class="footer">
+                        Powered by <b>Alticator Geometritizor Engine</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
