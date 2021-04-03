@@ -34,6 +34,18 @@ button:hover {
     background-color: rgb(0, 194, 178);
     border-style: inset;
 }
+#calculate-button {
+    float: right;
+    background: linear-gradient(to right, magenta, rgb(0, 223, 205));
+    border: none;
+    text-shadow: none;
+}
+#calculate-button:hover {
+    filter: brightness(120%);
+}
+#calculate-button:active {
+    border: 2px inset dodgerblue;
+}
 .brand-text {font-weight: bold; text-shadow: 0px 0px 5px magenta; font-size: 24px;}
 .container {margin-left: 200px; transition: 0.5s;}
 .sidenav {position: fixed; left: 0; top: 0; width: 200px; height: 100vh; box-sizing: border-box; transition: 0.5s; overflow: hidden;}

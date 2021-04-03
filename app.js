@@ -35,7 +35,7 @@ function calculate() {
         var y = $("#volume-y").val();
         var z = $("#volume-z").val();
         var cubicmetres = engine.multiply(engine.multiply(x, y), z);
-        result = '<span class="info">Using metres (m)</span><br><p>' + x + "m * " + y + "m * " + z + "m<br> = " + engine.multiply(x, y) + "m² * " + z + "m</p><h1>" + cubicmeters + 'm³</h1><span class="alternative-units">' + cubicmeters * 1000 + ' litres</span>';
+        result = '<span class="info">Using metres (m)</span><br><p>' + x + "m * " + y + "m * " + z + "m<br> = " + engine.multiply(x, y) + "m² * " + z + "m</p><h1>" + cubicmetres + 'm³</h1><span class="alternative-units">' + cubicmeters * 1000 + ' litres</span>';
     }
     else if (currentTab == 2) {
         var x = $("#area-x").val();
