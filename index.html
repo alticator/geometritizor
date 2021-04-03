@@ -22,6 +22,9 @@
             <button onclick="tab(1, this)" id="tab-1-button">
                 Volume
             </button>
+            <button onclick="tab(2, this)" id="tab-2-button">
+                Area
+            </button>
         </nav>
         <div class="container" id="container">
             <nav>
@@ -45,9 +48,16 @@
                         <div id="side5"></div>
                         <div id="side6"></div>
                     </div>
-                    <input id="volume-x" placeholder="X">
-                    <input id="volume-y" placeholder="Y">
-                    <input id="volume-z" placeholder="Z">
+                    <input type="number" id="volume-x" placeholder="X">
+                    <input type="number" id="volume-y" placeholder="Y">
+                    <input type="number" id="volume-z" placeholder="Z">
+                </div>
+            </div>
+            <div class="tab" id="tab-2" style="display: none;">
+                <div id="area-square-wrapper">
+                    <div id="area-square"></div>
+                    <input type="number" id="area-x" placeholder="X">
+                    <input type="number" id="area-y" placeholder="Y">
                 </div>
             </div>
             <div id="results-container">

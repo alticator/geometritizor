@@ -22,19 +22,26 @@ function tab(tabNumber, buttonElement) {
     currentTab = tabNumber;
     $(".tab").hide();
     $("#tab-" + tabNumber).show();
-    $(buttonElement).css("text-shadow", "0px 0px 15px magenta");
+    $(".sidenav button").css("text-shadow", "none");
+    $(buttonElement).css("text-shadow", "0px 0px 12px white");
     $(buttonElement).css("color", "white");
     $("#tab-name").text(buttonElement.innerHTML);
 }
 
 function calculate() {
     var result = "Calculation Error";
-    if(currentTab == 1) {
+    if (currentTab == 1) {
         var x = $("#volume-x").val();
         var y = $("#volume-y").val();
         var z = $("#volume-z").val();
-        var cubicmeters = multiply(multiply(x, y), z);
-        result = '<span class="info">Using meters (m)</span><br><p>' + x + "m * " + y + "m * " + z + "m<br> = " + multiply(x, y) + "m² * " + z + "m</p><h1>" + cubicmeters + 'm³</h1><span class="alternative-units">' + cubicmeters * 1000 + ' litres</span>';
+        var cubicmetres = engine.multiply(engine.multiply(x, y), z);
+        result = '<span class="info">Using metres (m)</span><br><p>' + x + "m * " + y + "m * " + z + "m<br> = " + engine.multiply(x, y) + "m² * " + z + "m</p><h1>" + cubicmeters + 'm³</h1><span class="alternative-units">' + cubicmeters * 1000 + ' litres</span>';
+    }
+    else if (currentTab == 2) {
+        var x = $("#area-x").val();
+        var y = $("#area-y").val();
+        var squaremetres = engine.multiply(x, y);
+        result = '<span class="info">Using metres (m)</span><br><h1>' + squaremetres + 'm²</h1>'
     }
     $("#results").html(result);
 }
