@@ -5,7 +5,7 @@
 
 html, body {margin: 0;}
 * {font-family: sans-serif;}
-nav {background-color: dodgerblue; color: white; padding: 5px; user-select: none; -webkit-user-select: none; cursor: default;}
+nav {background-color: dodgerblue; color: white; padding: 5px; user-select: none; -webkit-user-select: none; cursor: default; position: sticky; top: 0; z-index: 1;}
 nav .menu-button, nav .menu-button:hover {background-color: transparent; color: white; font-size: 36px; border: none; cursor: pointer;}
 nav .menu-button div {width: 20px; height: 3px; background-color: white; margin: 3px 0;}
 button {
@@ -96,7 +96,9 @@ button:hover {
 #volume-cube-wrapper {
     position: relative;
     padding: 10px;
-    margin-bottom: 80px;
+    margin-bottom: 150px;
+    z-index: 0;
+    transform: translateZ(-100px);
 }
 #volume-cube-wrapper input {
     position: absolute;
@@ -128,7 +130,7 @@ button:hover {
     transform: rotateX(-30deg) rotateY(-45deg) rotateZ(0deg);
     -moz-transform: rotateX(-30deg) rotateY(-45deg) rotateZ(0deg);
     -webkit-transform: rotateX(-30deg) rotateY(-45deg) rotateZ(0deg);
-    position: relative;
+    position: absolute;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
@@ -188,6 +190,7 @@ button:hover {
     width: 100px;
     height: 100px;
     position: absolute;
+    z-index: -1;
     background-color: magenta;
     opacity: 0.85;
 }

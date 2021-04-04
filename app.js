@@ -3,6 +3,13 @@
 
 var uiElements;
 var currentTab = 1;
+document.onkeydown = keyPress;
+
+function keyPress(e) {
+    if (e.key == "Enter") {
+        calculate();
+    }
+}
 
 function closeMenubar() {
     uiElements.menubar.style.width = "0";
@@ -35,13 +42,13 @@ function calculate() {
         var y = $("#volume-y").val();
         var z = $("#volume-z").val();
         var cubicmetres = engine.multiply(engine.multiply(x, y), z);
-        result = '<span class="info">Using metres (m)</span><br><p>' + x + "m * " + y + "m * " + z + "m<br> = " + engine.multiply(x, y) + "m² * " + z + "m</p><h1>" + cubicmetres + 'm³</h1><span class="alternative-units">' + cubicmetres * 1000 + ' litres</span>';
+        result = `<span class="info">Using metres (m)</span><br><p>${x}m * ${y}m * ${z}m<br> = ${engine.multiply(x, y)}m² * ${z}m</p><h1>${cubicmetres}m³</h1><span class="alternative-units">${cubicmetres * 1000} litre(s)</span>`;
     }
     else if (currentTab == 2) {
         var x = $("#area-x").val();
         var y = $("#area-y").val();
         var squaremetres = engine.multiply(x, y);
-        result = '<span class="info">Using metres (m)</span><br><h1>' + squaremetres + 'm²</h1>'
+        result = `<span class="info">Using metres (m)</span><br><h1>${squaremetres}m²</h1>`
     }
     $("#results").html(result);
 }

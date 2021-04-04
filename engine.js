@@ -13,7 +13,7 @@ var engine = {
         var first = a * 1000000000000;
         var second = b * 1000000000000;
         var addition = first + second;
-        var result = addition - 2000000000000;
+        var result = addition / 1000000000000;
         return result;
     }
 }
