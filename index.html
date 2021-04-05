@@ -16,8 +16,11 @@
             <span style="font-size: 18px">Could not load libraries and/or could not run scripts</span>
         </div>
         <nav class="sidenav" id="menubar">
-            <button class="header" onclick="closeMenubar()">
+            <button class="header tooltip" onclick="closeMenubar()">
                 &#171; Menu
+                <span class="tooltiptext">
+                    Control + M
+                </span>
             </button>
             <button onclick="tab(1, this)" id="tab-1-button">
                 Volume
@@ -36,7 +39,12 @@
                 <span class="brand-text">
                     Alticator Geometritizor
                 </span>
-                <button id="calculate-button" onclick="calculate()">&#9654; Calculate</button>
+                <button id="calculate-button" class="tooltip" onclick="calculate()">
+                    &#9654; Calculate
+                    <span class="tooltiptext">
+                        Enter
+                    </span>
+                </button>
             </nav>
             <div id="tab-name"></div>
             <div class="tab" id="tab-1" style="display: none;">

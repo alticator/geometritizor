@@ -9,6 +9,14 @@ function keyPress(e) {
     if (e.key == "Enter") {
         calculate();
     }
+    else if (e.key == "m" && e.ctrlKey) {
+        if (uiElements.menuVisible) {
+            closeMenubar();
+        }
+        else {
+            showMenubar();
+        }
+    }
 }
 
 function closeMenubar() {
@@ -16,6 +24,7 @@ function closeMenubar() {
     uiElements.menubar.style.padding = "0";
     uiElements.container.style.marginLeft = "0";
     uiElements.menuButton.style.visibility = "visible";
+    uiElements.menuVisible = false;
 }
 
 function showMenubar() {
@@ -23,6 +32,7 @@ function showMenubar() {
     uiElements.menubar.style.padding = "5px";
     uiElements.container.style.marginLeft = "200px";
     uiElements.menuButton.style.visibility = "hidden";
+    uiElements.menuVisible = true;
 }
 
 function tab(tabNumber, buttonElement) {
@@ -57,7 +67,8 @@ $(document).ready(function() {
     uiElements = {
         menubar: document.getElementById("menubar"),
         container: document.getElementById("container"),
-        menuButton: document.getElementById("menu-button")
+        menuButton: document.getElementById("menu-button"),
+        menuVisible: true
     }
     $("#internet-error").hide();
     tab(1, document.getElementById("tab-1-button"));
