@@ -18,7 +18,7 @@
         <nav class="sidenav" id="menubar">
             <button class="header tooltip" onclick="closeMenubar()">
                 &#171; Menu
-                <span class="tooltiptext">
+                <span class="tooltiptext-corner">
                     Control + M
                 </span>
             </button>
@@ -31,17 +31,20 @@
         </nav>
         <div class="container" id="container">
             <nav>
-                <button class="menu-button" id="menu-button" onclick="showMenubar()" style="visibility: hidden;">
+                <button class="menu-button tooltip" id="menu-button" onclick="showMenubar()" style="visibility: hidden;">
                     <div></div>
                     <div></div>
                     <div></div>
+                    <span class="tooltiptext-corner">
+                        Control + M
+                    </span>
                 </button>
                 <span class="brand-text">
                     Alticator Geometritizor
                 </span>
                 <button id="calculate-button" class="tooltip" onclick="calculate()">
                     &#9654; Calculate
-                    <span class="tooltiptext">
+                    <span class="tooltiptext-corner">
                         Enter
                     </span>
                 </button>

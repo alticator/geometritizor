@@ -53,7 +53,24 @@ code {
     border-style: solid;
     border-color: transparent transparent #505050 transparent;
 }
-.tooltip:hover .tooltiptext {
+.tooltip .tooltiptext-corner {
+    visibility: hidden;
+    width: 120px;
+    background-color: #505050;
+    text-align: center;
+    border-radius: 5px;
+    position: fixed;
+    z-index: 1;
+    bottom: 5px;
+    left: 65px;
+    margin-left: -60px;
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 5px 0;
+    z-index: 2;
+}
+.tooltip:hover .tooltiptext, .tooltip:hover .tooltiptext-corner {
     visibility: visible;
 }
 .info {
