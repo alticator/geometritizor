@@ -25,6 +25,8 @@ var coordinates = {
         // Ensure that the canvas is always a square
         $(this.canvas).height(this.w);
         this.ctx.lineWidth = 2;
+        this.ctx.strokeStyle = "black";
+        this.ctx.beginPath();
         this.ctx.moveTo(this.px(50), 0);
         this.ctx.lineTo(this.px(50), this.px(100));
         this.ctx.stroke();
@@ -33,14 +35,16 @@ var coordinates = {
         this.ctx.stroke();
     },
     drawLine: function(a, b, c, d) {
+        var ctx = this.canvas.getContext("2d");
         // Convert to pixels
         a = this.px(a);
         b = this.px(b);
         c = this.px(c);
         d = this.px(d);
         // Draw line
-        this.ctx.moveTo(a, b);
-        this.ctx.lineTo(c, d);
-        this.ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(a, b);
+        ctx.lineTo(c, d);
+        ctx.stroke();
     }
 }
