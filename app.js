@@ -60,6 +60,22 @@ function calculate() {
         var squaremetres = engine.multiply(x, y);
         result = `<span class="info">Using metres (m)</span><br><h1>${squaremetres}m²</h1>`
     }
+    else if (currentTab == 3) {
+        var startX = parseFloat($("#coordinates-start-x").val());
+        var startY = parseFloat($("#coordinates-start-y").val());
+        var endX = parseFloat($("#coordinates-end-x").val());
+        var endY = parseFloat($("#coordinates-end-y").val());
+        // Convert coordinates to canvas coordinates (percent)
+        startX = (startX + 100) / 2;
+        startY = 100 - (startY + 100) / 2;
+        endX = (endX + 100) / 2;
+        endY = 100 - (endY + 100) / 2;
+        // Draw the line
+        coordinates.ctx.strokeStyle = "green";
+        coordinates.ctx.lineWidth = 2;
+        coordinates.drawLine(startX, startY, endX, endY);
+        result = '<span class="info">Calculation Finished</span>';
+    }
     $("#results").html(result);
 }
 
@@ -72,4 +88,5 @@ $(document).ready(function() {
     }
     $("#internet-error").hide();
     tab(1, document.getElementById("tab-1-button"));
+    coordinates.init(document.getElementById("coordinates-canvas"));
 });

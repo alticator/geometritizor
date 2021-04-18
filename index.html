@@ -12,8 +12,16 @@
     </head>
     <body>
         <div id="internet-error" style="position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; box-sizing: border-box; padding: 100px; background-color: #505050; color: rgb(255, 117, 117); padding-left: 300px; z-index: 1;">
-            <span style="font-size: 36px;">No Internet Connection</span><br>
-            <span style="font-size: 18px">Could not load libraries and/or could not run scripts</span>
+            <span style="font-size: 36px;">Script Error</span><br>
+            <p style="font-size: 18px">
+                Could not run scripts. <br>
+                Possible reasons:
+                <ul>
+                    <li>No Internet Connection</li>
+                    <li>Error Loading Libraries</li>
+                    <li>Errors in Scripts</li>
+                </ul>
+            </p>
         </div>
         <nav class="sidenav" id="menubar">
             <button class="header tooltip" onclick="closeMenubar()">
@@ -27,6 +35,9 @@
             </button>
             <button onclick="tab(2, this)" id="tab-2-button">
                 Area
+            </button>
+            <button onclick="tab(3, this)" id="tab-3-button">
+                Coordinates
             </button>
         </nav>
         <div class="container" id="container">
@@ -70,6 +81,25 @@
                     <div id="area-square"></div>
                     <input type="number" id="area-x" placeholder="X">
                     <input type="number" id="area-y" placeholder="Y">
+                </div>
+            </div>
+            <div class="tab" id="tab-3" style="display: none;">
+                <div id="coordinates-container">
+                    <div class="panel" style="width: calc(100% - 550px)">
+                        <div class="header">
+                            Draw Lines
+                        </div>
+                        <div class="body">
+                            The coordinates are between <code>-100</code> and <code>100</code>. <br>
+                            From:<br>
+                            <input type="number" id="coordinates-start-x" placeholder="X">
+                            <input type="number" id="coordinates-start-y" placeholder="Y"><br>
+                            To: <br>
+                            <input type="number" id="coordinates-end-x" placeholder="X">
+                            <input type="number" id="coordinates-end-y" placeholder="Y"><br>
+                        </div>
+                    </div>
+                    <canvas id="coordinates-canvas" width="500" height="500"></canvas>
                 </div>
             </div>
             <div id="results-container">
