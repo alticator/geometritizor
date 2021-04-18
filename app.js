@@ -72,7 +72,7 @@ function calculate() {
         endY = 100 - (endY + 100) / 2;
         // Draw the line
         coordinates.ctx.lineWidth = 2;
-        coordinates.ctx.strokeStyle = "dodgerblue";
+        coordinates.ctx.strokeStyle = $("#coordinates-colour").val();
         coordinates.drawLine(startX, startY, endX, endY, "green");
         result = '<span class="info">Calculation Finished</span>';
     }

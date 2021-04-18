@@ -297,3 +297,7 @@ button:hover {
     height: 500px;
     border: 2px solid dodgerblue;
 }
+#coordinates-colour {
+    padding: 0;
+    border: 0;
+}
