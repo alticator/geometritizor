@@ -6,7 +6,7 @@ var currentTab = 1;
 document.onkeydown = keyPress;
 
 function keyPress(e) {
-    if (e.key == "Enter") {
+    if (e.key == "Enter" && e.ctrlKey) {
         calculate();
     }
     else if (e.key == "m" && e.ctrlKey) {
